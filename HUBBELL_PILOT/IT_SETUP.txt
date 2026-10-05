@@ -1,0 +1,55 @@
+HUBBELL PILOT — Shipping Operations
+Pallet Identification & Logistics Operations Tool
+=================================================
+
+Aplicación interna local/offline para generación de PID,
+etiquetas/QR y futuro Packing List / Shipping Operations.
+
+REQUISITOS
+----------
+- Windows
+- Python 3.13 de 64 bits
+- Permiso de lectura/escritura en la carpeta del proyecto
+- Visual Studio Code es opcional.
+
+CARPETA SUGERIDA
+----------------
+C:\HUBBELL_PILOT
+
+ENTORNO
+-------
+python -m venv .venv
+
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+
+PRUEBA
+------
+.\.venv\Scripts\python.exe main.py
+
+IDENTIDAD VISUAL V3
+-------------------
+La interfaz V3 dibuja los fondos e iconos de menú con Canvas/Tkinter
+para evitar imágenes rasterizadas de baja resolución.
+
+Assets necesarios:
+- assets\hubbell_logo.png
+- assets\pilot_icon.png
+- assets\pilot_icon.ico
+
+BASE DE DATOS
+-------------
+- SQLite local: pallets.db
+- No requiere nube para la operación esencial.
+- NO ejecutar crear_admin.py salvo que se esté creando una base nueva.
+
+MANTENIMIENTO
+-------------
+powershell -ExecutionPolicy Bypass -File .\install_maintenance_task.ps1
+
+IMPRESORA
+---------
+La integración física Zebra sigue pendiente.
+
+TRANSFERENCIA
+-------------
+Usar únicamente el método aprobado por IT.
