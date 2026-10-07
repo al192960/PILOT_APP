@@ -8,7 +8,7 @@ from pid_generator import PIDGenerator
 from translations import LANGUAGES, tr
 from maintenance import run_if_due
 from ui_branding import mostrar_logo
-
+from packing_list_generator import PackingListGenerator
 
 TIEMPO_INACTIVIDAD_MS = 30 * 60 * 1000
 
@@ -399,7 +399,7 @@ class PalletIDApp:
             font=("Arial", 13, "bold"),
             width=30,
             height=2,
-            state="disabled"
+            command=self.abrir_packing_list_generator
         ).pack(pady=6)
 
         if usuario["role"] == "ADMIN":
@@ -446,7 +446,14 @@ class PalletIDApp:
             self.temporizador_inactividad = None
 
         self.mostrar_login()
+    def abrir_packing_list_generator(self):
 
+        PackingListGenerator(
+            self.ventana,
+            self.usuario_actual,
+            self.mostrar_menu,
+            self.idioma
+        )
 
 if __name__ == "__main__":
 
