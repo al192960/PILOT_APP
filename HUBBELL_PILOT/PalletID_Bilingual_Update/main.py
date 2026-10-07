@@ -5,6 +5,7 @@ from auth import iniciar_sesion
 from admin_panel import AdminPanel
 from pid_generator import PIDGenerator
 from translations import LANGUAGES, tr
+from packing_list_generator import PackingListGenerator
 
 
 # -----------------------------------
@@ -396,7 +397,8 @@ class PalletIDApp:
             font=("Arial", 13, "bold"),
             width=30,
             height=2,
-            state="disabled"
+            command=self.abrir_packing_list_generator
+
         ).pack(pady=10)
 
         # ADMINISTRATION
@@ -448,8 +450,14 @@ class PalletIDApp:
             self.temporizador_inactividad = None
 
         self.mostrar_login()
+    def abrir_packing_list_generator(self):
 
-
+        PackingListGenerator(
+            self.ventana,
+            self.usuario_actual,
+            self.mostrar_menu,
+            self.idioma
+        )
 # -----------------------------------
 # INICIAR PROGRAMA
 # -----------------------------------

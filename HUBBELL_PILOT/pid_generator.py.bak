@@ -11,7 +11,6 @@ from qr_generator import generar_qr
 from label_generator import generar_etiqueta
 from translations import tr
 from ui_branding import mostrar_logo
-from zebra_printer import imprimir_etiqueta_pid
 
 
 class PIDGenerator:
@@ -1159,14 +1158,6 @@ class PIDGenerator:
                 weight_lb,
                 employee_id
             )
-            imprimir_etiqueta_pid(
-                pid,
-                destination,
-                packaging,
-                weight_lb,
-                employee_id,
-                qr_data
-            )
 
         except Exception as error:
 
@@ -1906,14 +1897,6 @@ class PIDGenerator:
                     employee_id
                 )
             )
-            imprimir_etiqueta_pid(
-                pid,
-                destination,
-                packaging,
-                weight_lb,
-                employee_id,
-                qr_data
-            )
 
         except Exception as error:
 
@@ -2044,14 +2027,6 @@ class PIDGenerator:
                     weight_lb,
                     employee_id
                 )
-            )
-            imprimir_etiqueta_pid(
-                pid,
-                destination,
-                packaging,
-                weight_lb,
-                employee_id,
-                qr_data
             )
 
             # Registrar reimpresión
